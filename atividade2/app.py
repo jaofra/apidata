@@ -18,8 +18,8 @@ def data_de_validade(quantidade, tipo):
     qtde = int(quantidade)
     if tipo in ["dia", "dias", "day","days"]:
         data_atual + relativedelta(months=qtde)
-
-    return jsonify({"A data de validade do produto é ": "data_de_validade"})
+        data_atual.strftime("%d/%m/%Y")
+        return jsonify({"A data de validade do produto é ": data_atual})
 
 
 if __name__ == '__main__':
